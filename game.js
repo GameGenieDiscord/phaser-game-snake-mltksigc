@@ -20,10 +20,23 @@ class MainScene extends Phaser.Scene {
         graphics.fillCircle(10, 10, 10);
         graphics.generateTexture('food', 20, 20);
         
-        // Powerup
+        // Powerup (star shape)
         graphics.clear();
         graphics.fillStyle(0xffff00);
-        graphics.fillStar(10, 10, 5, 10, 5);
+        // Draw a star using polygon
+        const star = new Phaser.Geom.Polygon([
+            10, 0,
+            12, 6,
+            18, 6,
+            13, 10,
+            15, 16,
+            10, 12,
+            5, 16,
+            7, 10,
+            2, 6,
+            8, 6
+        ]);
+        graphics.fillPoints(star.points);
         graphics.generateTexture('powerup', 20, 20);
         
         // Obstacle
