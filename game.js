@@ -184,7 +184,7 @@ class MainScene extends Phaser.Scene {
                 }
             }
             // Check collision with obstacles
-            if (valid) {
+            if (valid && this.obstacles.children) {
                 for (let obstacle of this.obstacles.children.entries) {
                     if (x < obstacle.x + obstacle.width &&
                         x + this.gridSize > obstacle.x &&
@@ -221,7 +221,7 @@ class MainScene extends Phaser.Scene {
                 valid = false;
             }
             // Check collision with obstacles
-            if (valid) {
+            if (valid && this.obstacles.children) {
                 for (let obstacle of this.obstacles.children.entries) {
                     if (x < obstacle.x + obstacle.width &&
                         x + this.gridSize > obstacle.x &&
